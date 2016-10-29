@@ -13,6 +13,9 @@ class PhpStructReader extends atoum
      */
     protected $class;
     
+    /**
+     * @var \xmlWriter $xmlWriter Instance of xmlWriter used by phpStructReader
+     */
     protected $xmlWriter;
     
     /**
@@ -23,18 +26,21 @@ class PhpStructReader extends atoum
         $datasToRead = null;
         
         $this->xmlWriter = new \XmlWriter;
-        $this->class     = new \bultonFr\PhpToXml\test\unit\mocks\PhpStructReader($this->xmlWriter, $datasToRead);
+        $this->class     = new \bultonFr\PhpToXml\test\unit\mocks\PhpStructReader(
+            $this->xmlWriter,
+            $datasToRead
+        );
         
         $this->xmlWriter->openMemory();
         $this->xmlWriter->setIndent(true);
         $this->xmlWriter->startDocument('1.0', 'UTF-8');
-        
-        /*
-        $this->xmlWriter->endDocument();
-        return $this->xmlWriter->outputMemory(false);
-        */
     }
     
+    /**
+     * Test the constructor
+     * 
+     * @return void
+     */
     public function testConstruct()
     {
         $this->assert('PHPStructReader::__construct')
@@ -45,6 +51,11 @@ class PhpStructReader extends atoum
                 ->isIdenticalTo($this->xmlWriter);
     }
     
+    /**
+     * Test method readSimpleElement
+     * 
+     * @return void
+     */
     public function testReadSimpleElement()
     {
         $this->assert('PHPStructReader::readSimpleElement')
@@ -59,6 +70,11 @@ class PhpStructReader extends atoum
                 );
     }
     
+    /**
+     * Test method readArrayElement
+     * 
+     * @return void
+     */
     public function testReadArrayElement()
     {
         $this->assert('PHPStructReader::readArrayElement with simple value')
@@ -102,6 +118,11 @@ class PhpStructReader extends atoum
                 );
     }
     
+    /**
+     * Test method readObjectElement
+     * 
+     * @return void
+     */
     public function testReadObjectElement()
     {
         $this->assert('PHPStructReader::readObjectElement with complexe element')
@@ -121,7 +142,11 @@ class PhpStructReader extends atoum
                 );
     }
     
-    
+    /**
+     * Test method readStructure
+     * 
+     * @return void
+     */
     public function testReadStructure()
     {
         $datas = (object) [

@@ -21,6 +21,11 @@ class PhpToXml extends atoum
         $this->class = new \bultonFr\PhpToXml\test\unit\mocks\PhpToXml;
     }
     
+    /**
+     * Test the constructor
+     * 
+     * @return void
+     */
     public function testConstruct()
     {
         $this->assert('PhpToXml::__construct')
@@ -30,6 +35,11 @@ class PhpToXml extends atoum
                 ->isInstanceOf('\XmlWriter');
     }
     
+    /**
+     * Test the method convert with utf-8 encoding
+     * 
+     * @return void
+     */
     public function testConvertUtf8()
     {
         $datas = (object) [
@@ -84,6 +94,11 @@ class PhpToXml extends atoum
                 );
     }
     
+    /**
+     * Test the method convert with iso-8859-1 encoding
+     * 
+     * @return void
+     */
     public function testConvertIso88591()
     {
         $datas = (object) [

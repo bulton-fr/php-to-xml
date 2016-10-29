@@ -60,12 +60,16 @@ class PhpStructReader
     }
     
     /**
-     * Write a xml element for a array structure
-     * Call a new instance of this class to read datas in array
+     * Write a xml element for an array structure
+     * Loop on all datas and call a new instance of this class to read datas
+     * if data is an array or an object.
      * The new instance is to by-pass recursive error.
+     * If is not an array or object, call readSimpleElement.
      * 
      * @param string $elementName The name of the element 
      * @param mixed $elementValue Datas for this element
+     * 
+     * @return void
      */
     protected function readArrayElement($elementName, &$elementValue)
     {
@@ -81,15 +85,21 @@ class PhpStructReader
         }
     }
     
+    /**
+     * Write a xml element for an object structure
+     * Call a new instance of this class to read datas in array
+     * The new instance is to by-pass recursive error.
+     * 
+     * @param string $elementName The name of the element 
+     * @param mixed $elementValue Datas for this element
+     * 
+     * @return void
+     */
     protected function readObjectElement($elementName, &$elementValue)
     {
         $this->xmlWriter->startElement($elementName);
         new PhpStructReader($this->xmlWriter, $elementValue);
         $this->xmlWriter->endElement();
-        
-        /*foreach ($elementValue as $elementItem) {
-            $this->readSimpleElement($elementName, $elementItem);
-        }*/
     }
     
     /**
@@ -97,6 +107,8 @@ class PhpStructReader
      * 
      * @param string $elementName The name of the element 
      * @param mixed $elementValue Datas for this element
+     * 
+     * @return void
      */
     protected function readSimpleElement($elementName, &$elementValue)
     {
