@@ -1,7 +1,7 @@
 # php-to-xml
 Convert php basic structure to xml document
 
-[![Build Status](https://travis-ci.org/bulton-fr/php-to-xml.svg?branch=1.0r)](https://travis-ci.org/bulton-fr/php-to-xml) [![Coverage Status](https://coveralls.io/repos/github/bulton-fr/php-to-xml/badge.svg?branch=1.0)](https://coveralls.io/github/bulton-fr/php-to-xml?branch=1.0) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bulton-fr/php-to-xml/badges/quality-score.png?b=1.0)](https://scrutinizer-ci.com/g/bulton-fr/php-to-xml/?branch=1.0)
+[![Build Status](https://travis-ci.org/bulton-fr/php-to-xml.svg?branch=master)](https://travis-ci.org/bulton-fr/php-to-xml) [![Coverage Status](https://coveralls.io/repos/github/bulton-fr/php-to-xml/badge.svg?branch=master)](https://coveralls.io/github/bulton-fr/php-to-xml?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bulton-fr/php-to-xml/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bulton-fr/php-to-xml/?branch=master)
 
 This library is to convert a basic php structure to xml document. Xml attributes is not implemented.
 The main goal is to convert a php structure to json or xml.
