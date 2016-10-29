@@ -6,7 +6,20 @@ Convert php basic structure to xml document
 This library is to convert a basic php structure to xml document. Xml attributes is not implemented.
 The main goal is to convert a php structure to json or xml.
 
-Example : 
+## Install
+With composer:
+`curl -sS https://getcomposer.org/installer | php`
+
+Add in your composer.json
+```json
+{
+    "require": {
+        "bulton-fr/php-to-xml": "@stable"
+    }
+}
+```
+
+## Example
 
 PHP:
 ```php
